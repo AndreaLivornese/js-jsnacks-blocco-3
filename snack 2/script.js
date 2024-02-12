@@ -6,8 +6,25 @@ const array1=["a","b","c"];
 const array2=[1,2,3];
 
 
+const resultEl= document.querySelector("#result");
 
-console.log(fusionArray(array1, array2))
+document.querySelector("#btn-unisci").addEventListener("click", function(){
+
+    const word1 = document.querySelector("#word1").value;
+    const word2 = document.querySelector("#word2").value;
+
+
+    const fusionWords = fusionArray(word1, word2);
+
+    resultEl.innerText = fusionWords;
+
+    document.querySelector("#word1").value="";
+    document.querySelector("#word2").value="";
+
+})
+
+
+
 
 
 
@@ -25,7 +42,7 @@ function fusionArray(arr1, arr2){
     
     let arrOut=[];
 
-    while(i < arr1.length && i < arr2.length){
+    while(i < arr1.length || i < arr2.length){
     
         if(i < arr1.length){
             arrOut.push(arr1[i].toString());
