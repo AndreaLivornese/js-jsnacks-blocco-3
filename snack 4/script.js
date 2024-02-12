@@ -7,7 +7,17 @@
 const array = ['c','i,','c','o','g','n','a'];
 
 
-console.log(stringSort(array));
+document.querySelector("#btn-sort").addEventListener("click", function(){
+
+    let str = document.querySelector("#word").value;
+
+
+    str  = stringSort(str.split(""));
+
+
+    document.querySelector("#result").innerText= str;
+
+})
 
 
 
@@ -15,6 +25,9 @@ console.log(stringSort(array));
 // funzione che ordina i caratteri all'interno di una stringaù
 
 function stringSort(str){
+
+
+    // Bubble sort
 
     // for più "lento" e scorre la stringa
     for(let i=0; i < str.length; i++){
@@ -35,6 +48,6 @@ function stringSort(str){
 
 
 
-    return str;
+    return str.join('');
 
 }
