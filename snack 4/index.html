@@ -12,11 +12,21 @@
 <body>
     
     <div class="container">
-        <div class="d-flex">
+        <div class="row justify-content-center ">
+            <div class="col-3">
+                <form>
+                    <label for="word" class="form-label">Inserisci qui la tua parola</label>
+                    <input type="text" id="word" class="form-control">
 
-            
-           
+                    <hr>
 
+                    <label for="resutl" class="form-label ">Ecco qui la tua parola ma con le lettere ordinate in modo crescente</label>
+                    <div id="result" class="form-control"></div>
+                </form>
+            </div>
+            <div class="col-2">
+                <button class="btn btn-danger mt-5" id="btn-sort">Ordina</button>
+            </div>
         </div>
     </div>
     
