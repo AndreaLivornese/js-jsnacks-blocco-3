@@ -1,12 +1,23 @@
 // Scrivi una funzione che accetti una stringa come argomento e la restituisca girata (es. "Ciao" -> "oaiC")
 
 
-// input string
-
-let str = "ciao";
 
 
-console.log(stringInvert(str));
+document.querySelector("#btn-generate").addEventListener("click", function(){
+    
+    const resultEl= document.querySelector("#result");
+
+    // input string
+    let str = document.querySelector("#word").value;
+
+
+    str = stringInvert(str);
+
+    console.log(str)
+
+    resultEl.innerText = str;
+
+})
 
 
 
@@ -14,16 +25,14 @@ console.log(stringInvert(str));
 function stringInvert(str){
 
     let strOutput=[];
-    j=0;
+
     // scorre la stringa dalla posizione massima fino alla minima
     for(let i=str.length-1; i>=0; i--){
-        console.log(i);
+        console.log(str[i])
         // nella poosizione j-esima di "strOutput" viene inserita il carattere i-esimo della string "str"
-        strOutput[j] = str[i];
-        j++;
-        console.log(strOutput);
+        strOutput.push(str[i]); 
     }
 
-    return strOutput;
+    return strOutput.join('');
 
 }
