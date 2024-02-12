@@ -13,7 +13,31 @@
 // array input
 let array=[1,2,3,4,5,6,7];
 
-console.log(subArray(array, 2, 5));
+
+document.querySelector("#btn-generate").addEventListener("click", function(){
+
+    const str =document.querySelector("#word").value;
+
+    const range1 = Number(document.querySelector("#range1").value);
+    const range2 = Number(document.querySelector("#range2").value);
+
+    if((range1 > str.length || range1 < 0) || (range2 > str.length || range2 < 0)){
+        alert("valori dei range non validi");
+
+        document.querySelector("#range1").value= "";
+        document.querySelector("#range2").value= "";
+    }else{
+
+        let subStr=subArray(str, range1, range2) ;
+
+        document.querySelector("#result").innerText= subStr;
+
+    }
+
+
+
+
+})
 
 
 
@@ -39,6 +63,6 @@ function subArray(arr, a ,b){
 
     }
 
-    return arrOut;
+    return arrOut.join('');
 
 }
